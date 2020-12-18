@@ -26,7 +26,7 @@ steps:
 - script: |
     pwd
     ls -la
-  displayName: 'Verify build environment'
+  displayName: 'Verify build environment (pre)'
 
 - script: |
     make install
@@ -39,3 +39,8 @@ steps:
 - script: |
     make package
   displayName: 'Package project'
+
+- script: |
+    pwd
+    ls -la
+  displayName: 'Verify build environment (post)'
