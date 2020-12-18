@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="test-wheel-package-LingchenZhu",
+    name="test-wheel-package",
     version=version,
     author="Lingchen Zhu",
     author_email="zhulingchen@gmail.com",
