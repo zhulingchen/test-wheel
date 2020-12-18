@@ -44,3 +44,17 @@ steps:
     pwd
     ls -la
   displayName: 'Verify build environment (post)'
+
+- task: CopyFiles@2
+  displayName: 'Copy files from source directory to artifact staging directory'
+  inputs:
+    sourceFolder: '$(Build.SourcesDirectory)'
+    contents: 'dist/**'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+    overWrite: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish build artifacts'
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'dist'
