@@ -1,11 +1,14 @@
 import setuptools
+import os
+
+version = "0.0." + os.getenv("AZURE_BUILDID", "unknown")
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="test-wheel-package-LingchenZhu",
-    version="0.0.1",
+    version=version,
     author="Lingchen Zhu",
     author_email="zhulingchen@gmail.com",
     description="A very simple example package",

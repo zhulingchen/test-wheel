@@ -37,6 +37,8 @@ steps:
   displayName: 'Test project'
 
 - script: |
+    export AZURE_BUILDID=$(Build.BuildId)
+    echo "package version = 0.0.${AZURE_BUILDID}"
     make package
   displayName: 'Package project'
 
